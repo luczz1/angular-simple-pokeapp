@@ -5,7 +5,7 @@ Vou ir atualizando conforme eu for ficando mais experiente na linguagem.
 
 Pretendo fazer:
 
-[] - Informações detalhadas sobre as abilities dos pokémon
+[] - Informações detalhadas sobre as abilities dos pokémon #
 [] - Possível visualizar sua forma shiny ao clicar no pokémon
 [] - Adicionar um botão para ouvir o 'cry'.
 [] - Melhorar o design
