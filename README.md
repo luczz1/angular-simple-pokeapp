@@ -1,6 +1,7 @@
 # Poke
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+Meu primeiro projeto em Angular.
+Vou ir atualizando conforme eu for ficando mais experiente na linguagem.
 
 ## Development server
 
