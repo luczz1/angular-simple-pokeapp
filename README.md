@@ -3,14 +3,14 @@
 Meu primeiro projeto em Angular.
 Vou ir atualizando conforme eu for ficando mais experiente na linguagem.
 
-Pretendo fazer:
+##Pretendo fazer:
 
-[] - Informações detalhadas sobre as abilities dos pokémon #
-[] - Possível visualizar sua forma shiny ao clicar no pokémon
-[] - Adicionar um botão para ouvir o 'cry'.
-[] - Melhorar o design
-[] - Adicionar tema escuro
-[] - Barra de pesquisa
+**[]** - Informações detalhadas sobre as abilities dos pokémon #
+**[]** - Possível visualizar sua forma shiny ao clicar no pokémon
+**[]** - Adicionar um botão para ouvir o 'cry'.
+**[]** - Melhorar o design
+**[]** - Adicionar tema escuro
+**[]** - Barra de pesquisa
 
 (os itens não serão feitos em ordem e alguns podem ficar inacabados para sempre)
 
