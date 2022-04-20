@@ -1,0 +1,35 @@
+
+
+  <div class="text-center">
+    <div *ngIf="pokeStats != undefined">
+      <div *ngFor="let values of pokeStats">
+        <br />
+
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokeID}}.png"
+            alt=""
+            (click)="pokeClicked(values.name)"
+            class="img-fluid"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ values.pokedexNum }}. {{ values.name }}
+            </h5>
+            <p class="card-text">{{ values.types }}</p>
+          </div>
+          <ul
+            class="list-group list-group-flush"
+            *ngFor="let prefixes of prefix; index as i"
+          >
+            <li class="list-group-item">
+              {{ prefix[i] }} {{ values.basestats[i] }}
+            </li>
+          </ul>
+          <a class="btn btn-primary mt-3" routerLink="/allpoke">Voltar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<router-outlet></router-outlet>

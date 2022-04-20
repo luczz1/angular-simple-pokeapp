@@ -1,0 +1,25 @@
+
+.navbar {
+  margin: auto;
+}
+
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+
+}
+
+.container {
+  width: 250px;
+
+}
+
+.btn {
+  margin: auto;
+}
+
+.form-control {
+  text-transform: lowercase;
+}
+
