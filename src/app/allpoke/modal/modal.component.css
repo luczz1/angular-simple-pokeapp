@@ -4,9 +4,12 @@
 }
 
 .card {
-  margin: 0 auto;
   float: none;
   margin-bottom: 10px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
 
 }
 

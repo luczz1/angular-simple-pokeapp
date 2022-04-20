@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeApiService } from '../poke-api.service';
-import { PokeModel } from '../poke.model';
+import { PokeModel } from '../shared/poke.model';
 
 @Component({
   selector: 'app-poke-panel',

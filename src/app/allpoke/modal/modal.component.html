@@ -1,13 +1,12 @@
 
-
-  <div class="text-center">
+  <div class="text-center" >
     <div *ngIf="pokeStats != undefined">
       <div *ngFor="let values of pokeStats">
         <br />
 
-        <div class="card" style="width: 18rem">
+        <div class="card" style="width: 18rem;" >
           <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokeID}}.png"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokeID}}.png"
             alt=""
             (click)="pokeClicked(values.name)"
             class="img-fluid"
@@ -16,20 +15,31 @@
             <h5 class="card-title">
               {{ values.pokedexNum }}. {{ values.name }}
             </h5>
-            <p class="card-text">{{ values.types }}</p>
+            <div *ngFor="let types of pokeStats[0].types">
+              {{types | titlecase}}
+            </div>
           </div>
-          <ul
-            class="list-group list-group-flush"
-            *ngFor="let prefixes of prefix; index as i"
-          >
-            <li class="list-group-item">
+          <div *ngFor="let prefixes of prefix; index as i">
               {{ prefix[i] }} {{ values.basestats[i] }}
-            </li>
-          </ul>
-          <a class="btn btn-primary mt-3" routerLink="/allpoke">Voltar</a>
+        </div>
+        <a class="btn btn-primary mt-3" routerLink="/allpoke">Voltar</a>
+        <hr />
+        <h5>Informações adicionais: </h5>
+        <div *ngFor="let ability of additionalPokeStats[0].abilities; index as i">
+          Habilidade {{i+1}}: {{ability}}
+        </div>
+          <p></p>
+          <p>Experiência base: {{additionalPokeStats[0].base_experience}}</p>
+          <p>Peso: {{additionalPokeStats[0].weight}}Kg</p>
         </div>
       </div>
     </div>
   </div>
 
+<div>
+    <h3>Informações adicionais</h3>
+    <!-- <div *ngFor="let ability of additionalPokeStats[0].abilities"> -->
+      <!-- {{ability}} -->
+
+  </div>
 <router-outlet></router-outlet>
