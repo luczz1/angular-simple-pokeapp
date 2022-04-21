@@ -1,3 +1,4 @@
+<body background="#">
 <div class="input-group">
   <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" #searchBar (input)="searchBarValue(searchBar.value)"/>
   <p class="text-muted">por enquanto só funciona se digitar o nome inteiro e correto (vou melhorar isso depois)</p>
@@ -35,10 +36,20 @@
     <div *ngIf="allPokes.length < 150">
       <a class="btn btn-primary" routerLink="/modal/{{pokeID}}">Details</a>
     </div>
+
     </div>
-
   </div>
-
+</div>
+</body>
+<footer>
+  <div *ngIf="allPokes.length > 150">
+  <hr class="my-4" />
+  <div class="btnShow">
+    <button class="btn btn-primary" (click)="showMoreFunction()">View more</button>
   </div>
+</div>
+</footer>
+
+
 
 <router-outlet></router-outlet>

@@ -9,7 +9,7 @@ import { PokeallService } from '../pokeall.service';
 export class AllpokeComponent implements OnInit {
   allPokes: string[] = [];
   value = '';
-  pokeID: number
+  pokeID: number;
 
   constructor(private pokeAllService: PokeallService) {}
 
@@ -21,14 +21,24 @@ export class AllpokeComponent implements OnInit {
     });
   }
 
+  showMoreFunction() {
+    if (this.pokeAllService.limit <= 898) {
+      this.pokeAllService.showMore().subscribe((allPoke) => {
+        allPoke.results.forEach((poke) => {
+          this.allPokes.push(poke.name);
+          this.pokeAllService.limit++
+        });
+      });
+    }
+  }
+
   searchBarValue(value: string) {
     this.allPokes = [];
     this.value = value;
     this.pokeAllService.searchPoke(value).subscribe((searchResult) => {
-        this.allPokes.push(searchResult.name);
-        this.pokeID = searchResult.id
+      this.allPokes.push(searchResult.name);
+      this.pokeID = searchResult.id;
       if (this.value == '') {
-        console.log('vazio');
         this.allPokes = [];
         this.pokeAllService.showAllPoke().subscribe((allPoke) => {
           allPoke.results.forEach((poke) => {
@@ -36,6 +46,6 @@ export class AllpokeComponent implements OnInit {
           });
         });
       }
-    })
+    });
   }
 }

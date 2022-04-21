@@ -17,3 +17,8 @@
   padding-top: 40px;
 }
 
+.btnShow {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+}

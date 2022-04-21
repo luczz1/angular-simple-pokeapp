@@ -15,11 +15,6 @@ export class PokePanelComponent implements OnInit {
   constructor(private pokeApiService: PokeApiService) {}
 
   ngOnInit(): void {}
-
-  pokeClicked(value: string) {
-    console.log(value)
-  }
-
   pokePesquisaFunction(value: string) {
     this.pokeApiService.getPokemon(value).subscribe((pokeInfosByName) => {
       this.pokeStats = [
@@ -36,7 +31,7 @@ export class PokePanelComponent implements OnInit {
       pokeInfosByName.stats.forEach((apiInfos: any) => {
         this.pokeStats[0].basestats.push(apiInfos.base_stat);
       });
-      this.imgUrl = pokeInfosByName.sprites.front_default;
+      this.imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.pokeStats[0].pokedexNum}.png`;
     });
   }
 }
