@@ -1,15 +1,40 @@
+<div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" #searchBar (input)="searchBarValue(searchBar.value)"/>
+  <p class="text-muted">por enquanto só funciona se digitar o nome inteiro e correto (vou melhorar isso depois)</p>
+</div>
+
 <div class="principal">
+
   <div class="row justify-content-center">
 
     <div class="card bg-light mb-3" style="max-width: 18rem" *ngFor="let poke of allPokes; index as i">
+      <div *ngIf="allPokes.length >= 150">
       <div class="card-header">{{i+1}}</div>
+    </div>
+
+    <div *ngIf="allPokes.length < 150">
+      <div class="card-header">{{pokeID}}</div>
+    </div>
+
       <div class="card-body">
         <h5 class="card-title">{{ poke | titlecase }}</h5>
-       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i+1}}.png" alt="">
+        <div *ngIf="allPokes.length >= 150">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i+1}}.png" alt="">
+        </div>
+
+        <div *ngIf="allPokes.length < 150">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokeID}}.png" alt="">
+        </div>
+
 
       </div>
+      <div *ngIf="allPokes.length >= 150">
       <a class="btn btn-primary" routerLink="/modal/{{i+1}}">Details</a>
+    </div>
 
+    <div *ngIf="allPokes.length < 150">
+      <a class="btn btn-primary" routerLink="/modal/{{pokeID}}">Details</a>
+    </div>
     </div>
 
   </div>
