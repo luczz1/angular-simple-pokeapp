@@ -26,3 +26,27 @@
   text-transform: lowercase;
 }
 
+.mi {
+  margin-top: 140px;
+  background-color: #e3e6e4;
+}
+
+.im {
+  background-color: #e3e6e4;
+}
+
+.prin {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.utils {
+  border-style: solid;
+  border-color: #f0f0f0;
+  margin-top: 20px;
+}
+
+.progress {
+  width: 50%;
+  margin: auto;
+}

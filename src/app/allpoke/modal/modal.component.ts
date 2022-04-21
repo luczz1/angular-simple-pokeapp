@@ -12,8 +12,9 @@ import { PokeModel } from 'src/app/shared/poke.model';
 export class ModalComponent implements OnInit {
   pokeID: number;
   pokeStats: PokeModel[];
-  additionalPokeStats: additionalPoke[] = []
+  additionalPokeStats: additionalPoke[] = [];
   prefix: string[] = ['HP: ', 'ATK: ', 'DEF: ', 'Sp A: ', 'Sp D: ', 'Speed: '];
+  crySound: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.route.params.subscribe((params) => (this.pokeID = params['id']));
@@ -33,22 +34,28 @@ export class ModalComponent implements OnInit {
         ];
         this.additionalPokeStats = [
           {
-            abilities:[],
+            abilities: [],
             base_experience: pokeInfosByName.base_experience,
             weight: pokeInfosByName.weight,
           },
-        ]
+        ];
         pokeInfosByName.types.forEach((apiInfos: any) => {
           this.pokeStats[0].types.push(apiInfos.type.name);
         });
         pokeInfosByName.stats.forEach((apiInfos: any) => {
           this.pokeStats[0].basestats.push(apiInfos.base_stat);
         }),
-
-        pokeInfosByName.abilities.forEach((apiInfos: any) => {
-          this.additionalPokeStats[0].abilities.push(apiInfos.ability.name)
-        });
-        console.log(this.additionalPokeStats)
+          pokeInfosByName.abilities.forEach((apiInfos: any) => {
+            this.additionalPokeStats[0].abilities.push(apiInfos.ability.name);
+          });
       });
+  }
+
+  pokeClicked(value: string) {
+    this.crySound = new Audio();
+    this.crySound.src = `https://play.pokemonshowdown.com/audio/cries/${value}.mp3`;
+    this.crySound.volume = 0.1
+    this.crySound.load();
+    this.crySound.play();
   }
 }

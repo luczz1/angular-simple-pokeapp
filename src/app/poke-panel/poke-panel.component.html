@@ -3,6 +3,7 @@
   <div class="container">
     <nav class="navbar navbar-light bg-light">
       <label for="pokePesquisa">Deseja ver qual pokémon?</label>
+
       <input class="form-control" type="search" aria-label="Pesquisar" id="pokePesquisa" #pokePesquisa/>
       <button class="btn btn-outline-success mt-3" (click)="pokePesquisaFunction(pokePesquisa.value)">
         Pesquisar
@@ -12,6 +13,7 @@
 
 
   <div class="text-center">
+    <h2>Isso será mudado</h2>
     <div *ngIf="pokeStats != undefined">
       <div *ngFor="let values of pokeStats">
         <br />

@@ -1,45 +1,43 @@
 
-  <div class="text-center" >
-    <div *ngIf="pokeStats != undefined">
-      <div *ngFor="let values of pokeStats">
-        <br />
-
-        <div class="card" style="width: 18rem;" >
-          <img
+  <div class="prin">
+  <div class="card mb-3" style="max-width: 540px;" *ngFor="let values of pokeStats">
+    <div class="row g-0">
+      <div class="im col-md-4">
+        <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokeID}}.png"
             alt=""
             (click)="pokeClicked(values.name)"
-            class="img-fluid"
+            class="mi img-fluid rounded-end"
           />
-          <div class="card-body">
-            <h5 class="card-title">
-              {{ values.pokedexNum }}. {{ values.name }}
-            </h5>
-            <div *ngFor="let types of pokeStats[0].types">
-              {{types | titlecase}}
-            </div>
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="card-body">
+
+          <h5 class="card-title">{{ values.name | titlecase}}</h5>
+          <h6><div *ngFor="let types of pokeStats[0].types">
+            {{types | titlecase}}
+          </div></h6>
+          Base experience:
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{additionalPokeStats[0].base_experience}}</div>
           </div>
-          <div *ngFor="let prefixes of prefix; index as i">
+          <div class="utils">
+            <p class="card-text"><div *ngFor="let ability of additionalPokeStats[0].abilities; index as i">
+              Ability {{i+1}}. {{ability | titlecase}}
+            </div>
+              <p></p>
+              <p>Weight: {{additionalPokeStats[0].weight}}Kg</p>
+            <p class="card-text"><small class="text-muted"><div *ngFor="let prefixes of prefix; index as i">
               {{ prefix[i] }} {{ values.basestats[i] }}
-        </div>
-        <a class="btn btn-primary mt-3" routerLink="/allpoke">Voltar</a>
-        <hr />
-        <h5>Informações adicionais: </h5>
-        <div *ngFor="let ability of additionalPokeStats[0].abilities; index as i">
-          Habilidade {{i+1}}: {{ability}}
-        </div>
-          <p></p>
-          <p>Experiência base: {{additionalPokeStats[0].base_experience}}</p>
-          <p>Peso: {{additionalPokeStats[0].weight}}Kg</p>
+        </div></small></p>
+          </div>
+      <a class="btn btn-primary mt-3" routerLink="/allpoke">Go back</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-<div>
-    <h3>Informações adicionais</h3>
-    <!-- <div *ngFor="let ability of additionalPokeStats[0].abilities"> -->
-      <!-- {{ability}} -->
-
-  </div>
 <router-outlet></router-outlet>
