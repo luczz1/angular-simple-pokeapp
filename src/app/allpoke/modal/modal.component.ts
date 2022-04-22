@@ -4,11 +4,13 @@ import { ActivatedRoute } from '@angular/router';
 import { GenericService } from 'src/app/services/generic-services.service';
 import { additionalPoke } from 'src/app/shared/additionalpoke.model';
 import { PokeModel } from 'src/app/shared/poke.model';
+import { AllpokeComponent } from '../allpoke.component';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
+  providers: [AllpokeComponent],
 })
 export class ModalComponent implements OnInit {
   pokeID: number;
@@ -16,11 +18,15 @@ export class ModalComponent implements OnInit {
   additionalPokeStats: additionalPoke[] = [];
   prefix: string[] = ['HP: ', 'ATK: ', 'DEF: ', 'Sp A: ', 'Sp D: ', 'Speed: '];
   crySound: any;
+  form: string = 'oficial'
 
-  constructor(private route: ActivatedRoute, private http: HttpClient,
-    private genericService: GenericService) {
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private genericService: GenericService,
+    public allPoke: AllpokeComponent
+  ) {
     this.route.params.subscribe((params) => (this.pokeID = params['id']));
-
   }
 
   ngOnInit(): void {
@@ -55,6 +61,10 @@ export class ModalComponent implements OnInit {
   }
 
   pokeClicked(value: string) {
-    this.genericService.playCrySound(value)
+    this.genericService.playCrySound(value);
+  }
+
+  changeForm(value: any) {
+    this.form = value
   }
 }

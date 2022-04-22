@@ -15,17 +15,5 @@ export class MainpageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  turnDarkMode() {
-    if(!this.darkModeClick){
-      console.log('dark mode enabled')
-      this.darkModeClick = true
-      this.backgroundClass = 'bg-dark'
-    } else {
-      console.log('dark mode disabled')
-      this.darkModeClick = false
-      this.backgroundClass = 'bg-light'
-    }
-
-  }
 
 }

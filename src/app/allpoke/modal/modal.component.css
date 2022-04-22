@@ -5,16 +5,13 @@
 
 .card {
   float: none;
-  margin-bottom: 10px;
-  position: fixed;
-  left: 50%;
+  position: absolute;
+  left: 30%;
   transform: translate(-50%, 0);
-  background-color: white;
-
 }
 
 .container {
-  width: 250px;
+  width: 150px;
 
 }
 
@@ -28,20 +25,56 @@
 
 .mi {
   margin: auto;
+  width: 70%;
+  margin-left: 180px;
+  margin-top: 50px;
+}
+
+.mimi {
+  margin: auto;
+  width: 70%;
+  margin-left: 180px;
+}
+
+@media only screen and (max-width: 800px) {
+  .mimi {
+    margin: auto;
+  }
+  .mi {
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .form-select {
+    width: 80%;
+    margin: auto;
+  }
 }
 
 
+
+
+
 .prin {
-  margin: auto;
+  margin-left: 120px;
+  margin-right: 120px;
   text-align: center;
+  background-color:#f2f2f2;
+  border: 0.5px solid black;
 }
 
 
 .progress {
-  width: 50%;
+  width: 30%;
   margin: auto;
 }
 
 .voltar {
   margin: auto;
 }
+
+.form-select {
+  width: 23%;
+  margin: auto;
+}
+
+

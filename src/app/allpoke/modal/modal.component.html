@@ -1,21 +1,37 @@
-
+<body>
   <div class="prin">
+
     <div *ngFor="let values of pokeStats">
       <div class="row g-0">
         <div class="im col-md-4">
-          <img
+          <img *ngIf="form == 'oficial'"
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokeID}}.png"
               alt=""
               (click)="pokeClicked(values.name)"
               class="mi img-fluid rounded-start"
             />
+
+          <img *ngIf="form == 'normal'"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{{pokeID}}.png"
+              alt=""
+              (click)="pokeClicked(values.name)"
+              class="mimi img-fluid rounded-start"
+            />
+
+            <img *ngIf="form == 'shiny'"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/{{pokeID}}.png"
+            alt=""
+            (click)="pokeClicked(values.name)"
+            class="mimi img-fluid rounded-start"
+          />
+
         </div>
 
         <div class="col-md-8">
 
           <div>
 
-            <h3 class="card-title">{{ values.name | titlecase}}</h3>
+            <h3 class="card-title mt-4">{{ values.name | titlecase}}</h3>
             <h5><div *ngFor="let types of pokeStats[0].types">
               {{types | titlecase}}
             </div></h5>
@@ -32,14 +48,27 @@
               <p><small class="text-muted"><div *ngFor="let prefixes of prefix; index as i">
                 {{ prefix[i] }} {{ values.basestats[i] }}
           </div></small></p>
+          <div class="formselector mb-3">
+            Form:
+            <select class="form-select" (change)="changeForm(optionselector.value)"  #optionselector>
+              <option selected value="oficial">
+                Oficial
+              </option>
+              <option value="normal">
+                Normal (Pokémon Home)
+              </option>
+              <option value="shiny">
+                Shiny (Pokémon Home)
+              </option>
+            </select>
+          </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-
+</body>
 
 
 

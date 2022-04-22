@@ -11,8 +11,6 @@ export class AllpokeComponent implements OnInit {
   allPokes: string[] = [];
   value = '';
   pokeID: number;
-  backgroundClass: string = 'bg-light'
-  textClass: string = 'text-dark'
   occult: boolean = false
 
   constructor(
@@ -25,16 +23,6 @@ export class AllpokeComponent implements OnInit {
     this.allPokes = this.genericServices.allPokes;
   }
 
-
-  darkModePage() {
-    if(this.backgroundClass == 'bg-light') {
-      this.backgroundClass = 'bg-dark'
-      this.textClass = 'text-light'
-    } else {
-      this.backgroundClass = 'bg-light'
-      this.textClass = 'text-dark'
-    }
-  }
 
   showMoreFunction() {
     if (this.pokeAllService.limit <= 350) {
