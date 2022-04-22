@@ -5,11 +5,11 @@ Vou ir atualizando conforme eu for ficando mais experiente na linguagem.
 
 ## Pretendo fazer:
 
-1. **[ ]** - Informações detalhadas sobre as abilities dos pokémon
-2. **[ ]** - Possível visualizar sua forma shiny
-3. [**x**] - Adicionar um botão para ouvir o 'cry'.
+1. **[ ]** - Ver outras versões do pokémon (shiny)
+2. [**x**] - Adicionar um botão de "Ver mais"
+3. [**x**] - Ouvir o 'cry' do pokémon ao clicar nele.
 4. **[ ]** - Melhorar o design
-5. **[ ]** - Adicionar tema escuro
+5. **[ ]** - Adicionar modo noturno
 6. **[ ]** - Barra de pesquisa
 
 (os itens não serão feitos em ordem e alguns podem ficar inacabados para sempre)
