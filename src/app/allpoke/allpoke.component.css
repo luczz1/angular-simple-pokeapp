@@ -22,3 +22,8 @@
   right: 0px;
   width: 300px;
 }
+
+.alert {
+  margin: auto;
+  width: 20%;
+}

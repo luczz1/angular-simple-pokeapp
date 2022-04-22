@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GenericService } from 'src/app/services/generic-services.service';
 import { additionalPoke } from 'src/app/shared/additionalpoke.model';
 import { PokeModel } from 'src/app/shared/poke.model';
 
@@ -16,7 +17,8 @@ export class ModalComponent implements OnInit {
   prefix: string[] = ['HP: ', 'ATK: ', 'DEF: ', 'Sp A: ', 'Sp D: ', 'Speed: '];
   crySound: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  constructor(private route: ActivatedRoute, private http: HttpClient,
+    private genericService: GenericService) {
     this.route.params.subscribe((params) => (this.pokeID = params['id']));
   }
 
@@ -52,10 +54,6 @@ export class ModalComponent implements OnInit {
   }
 
   pokeClicked(value: string) {
-    this.crySound = new Audio();
-    this.crySound.src = `https://play.pokemonshowdown.com/audio/cries/${value}.mp3`;
-    this.crySound.volume = 0.1
-    this.crySound.load();
-    this.crySound.play();
+    this.genericService.playCrySound(value)
   }
 }

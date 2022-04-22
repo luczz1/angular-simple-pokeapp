@@ -1,4 +1,4 @@
-<body background="#">
+<body class="bg-light">
 <div class="input-group">
   <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" #searchBar (input)="searchBarValue(searchBar.value)"/>
   <p class="text-muted">por enquanto só funciona se digitar o nome inteiro e correto (vou melhorar isso depois)</p>
@@ -41,13 +41,20 @@
   </div>
 </div>
 </body>
+
+
+
 <footer>
-  <div *ngIf="allPokes.length > 150">
   <hr class="my-4" />
-  <div class="btnShow">
-    <button class="btn btn-primary" (click)="showMoreFunction()">View more</button>
+  <div class="alert alert-danger" role="alert" *ngIf="this.pokeAllService.limit > 350">
+    Você chegou ao limite de pokémon permitidos!
   </div>
-</div>
+  <div *ngIf="allPokes.length > 150 && this.pokeAllService.limit < 350">
+    <div class="btnShow">
+      <button class="btn btn-primary" (click)="showMoreFunction()">View more</button>
+    </div>
+  </div>
+
 </footer>
 
 
