@@ -17,10 +17,6 @@ export class PokeallService {
     return this.http.get(`${this.url}?limit=${this.limit}&offset=0`);
   }
 
-  searchPoke(value: string): Observable<any> {
-    return this.http.get(`${this.url}/${value}`);
-  }
-
   showMore() : Observable<any> {
     return this.http.get(`${this.url}?limit=${this.more}&offset=${this.limit}`);
   }

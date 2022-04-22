@@ -20,6 +20,7 @@ export class ModalComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient,
     private genericService: GenericService) {
     this.route.params.subscribe((params) => (this.pokeID = params['id']));
+
   }
 
   ngOnInit(): void {

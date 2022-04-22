@@ -27,26 +27,21 @@
 }
 
 .mi {
-  margin-top: 140px;
-  background-color: #e3e6e4;
+  margin: auto;
 }
 
-.im {
-  background-color: #e3e6e4;
-}
 
 .prin {
+  margin: auto;
   text-align: center;
-  margin-top: 50px;
 }
 
-.utils {
-  border-style: solid;
-  border-color: #f0f0f0;
-  margin-top: 20px;
-}
 
 .progress {
   width: 50%;
+  margin: auto;
+}
+
+.voltar {
   margin: auto;
 }

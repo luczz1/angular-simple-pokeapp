@@ -20,7 +20,7 @@ import { ModalComponent } from './allpoke/modal/modal.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
+    AppRoutingModule
 
   ],
   providers: [],

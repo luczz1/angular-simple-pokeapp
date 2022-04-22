@@ -7,8 +7,10 @@ import { ModalComponent } from './allpoke/modal/modal.component';
 const routes: Routes = [
   {path: '', component: PokePanelComponent},
   {path: 'pokepanel', component: PokePanelComponent},
-  {path: 'allpoke', component: AllpokeComponent},
-  {path: 'modal/:id', component: ModalComponent},
+  {path: 'allpoke', component: AllpokeComponent, children:[
+    {path: 'modal/:id', component: ModalComponent, pathMatch: 'full'}
+  ]},
+
   {path: '**', component: AllpokeComponent},
 ];
 
