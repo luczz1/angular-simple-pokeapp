@@ -36,6 +36,14 @@
   margin-left: 180px;
 }
 
+.prin {
+  margin-left: 120px;
+  margin-right: 120px;
+  text-align: center;
+  background-color:#f2f2f2;
+  border: 0.5px solid black;
+}
+
 @media only screen and (max-width: 800px) {
   .mimi {
     margin: auto;
@@ -48,19 +56,18 @@
     width: 80%;
     margin: auto;
   }
+  .prin {
+    margin-left: 80px;
+    margin-right: 80px;
+    text-align: center;
+    background-color:#FFF;
+    border: none;
+    margin-bottom: 65px;
+  }
 }
 
 
 
-
-
-.prin {
-  margin-left: 120px;
-  margin-right: 120px;
-  text-align: center;
-  background-color:#f2f2f2;
-  border: 0.5px solid black;
-}
 
 
 .progress {
