@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.app",
+	"appName": "poke",
+	"webDir": "dist/poke",
+	"bundledWebRuntime": false
+}

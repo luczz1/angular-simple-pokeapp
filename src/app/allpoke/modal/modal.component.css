@@ -47,10 +47,11 @@
 @media only screen and (max-width: 800px) {
   .mimi {
     margin: auto;
+    width: 58%;
   }
   .mi {
     margin: auto;
-    margin-bottom: 30px;
+    width: 55%;
   }
   .form-select {
     width: 80%;
@@ -62,7 +63,6 @@
     text-align: center;
     background-color:#FFF;
     border: none;
-    margin-bottom: 65px;
   }
 }
 
