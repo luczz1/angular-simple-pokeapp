@@ -23,3 +23,7 @@
   text-transform: lowercase;
 }
 
+.card {
+  margin: auto;
+  width: 30%;
+}

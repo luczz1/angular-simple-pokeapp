@@ -7,11 +7,11 @@
 
     <div class="card mb-3" style="max-width: 18rem" *ngFor="let poke of allPokes; index as i">
       <div *ngIf="allPokes.length >= 150">
-      <div class="card-header"><img class="emojidex-emoji" src="https://cdn.emojidex.com/emoji/seal/Pokebola.png" emoji-code="Pokebola" alt="Pokebola" width="7%" height="7%" />{{i+1}}</div>
+      <div class="card-header">{{i+1}}</div>
     </div>
 
     <div *ngIf="allPokes.length < 150">
-      <div class="card-header"><img class="emojidex-emoji" src="https://cdn.emojidex.com/emoji/seal/Pokebola.png" emoji-code="Pokebola" alt="Pokebola" width="7%" height="7%" />{{pokeID}}</div>
+      <div class="card-header">{{pokeID}}</div>
     </div>
 
       <div class="card-body">
@@ -27,7 +27,7 @@
 
       </div>
       <div *ngIf="allPokes.length >= 150">
-      <a class="btn btn-danger" routerLink="modal/{{i+1}}" (click)="occultElement()">Details</a>
+      <a class="btn btn-primary" routerLink="modal/{{i+1}}" (click)="occultElement()">Details</a>
     </div>
 
     <div *ngIf="allPokes.length < 150">
@@ -48,7 +48,7 @@
   </div>
   <div *ngIf="allPokes.length > 150 && this.pokeAllService.limit < 350">
     <div class="btnShow">
-      <button class="btn btn-danger" (click)="showMoreFunction()">View more</button>
+      <button class="btn btn-primary" (click)="showMoreFunction()">View more</button>
     </div>
   </div>
 
@@ -56,7 +56,7 @@
 </body>
 
 <div *ngIf="occult == true">
-  <button class="voltar btn btn-danger" routerLink="/allpoke" (click)="occultElement()">Go back</button>
+  <button class="voltar close" aria-label="Close" routerLink="/allpoke" (click)="occultElement()"><span aria-hidden="true">&times;</span></button>
 </div>
 
 

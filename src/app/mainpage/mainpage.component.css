@@ -4,6 +4,10 @@
   color: lightgray;
 }
 
+.navbar {
+  background-color: #A30000;
+}
+
 @media only screen and (max-width: 800px) {
   .navbar {
     margin-bottom: 1px;
