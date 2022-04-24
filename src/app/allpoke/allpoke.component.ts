@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { GenericService } from '../services/generic-services.service';
 import { PokeallService } from '../services/pokeall.service';
@@ -16,6 +17,7 @@ export class AllpokeComponent implements OnInit {
   constructor(
     public pokeAllService: PokeallService,
     private genericServices: GenericService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {

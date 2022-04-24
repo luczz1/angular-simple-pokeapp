@@ -23,7 +23,19 @@
   text-transform: lowercase;
 }
 
-.card {
+.principal {
   margin: auto;
-  width: 30%;
+  text-align: center;
+}
+
+.imgtitle {
+  width: 20%;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .imgtitle {
+    width: 50%;
+    cursor: pointer;
+  }
 }
