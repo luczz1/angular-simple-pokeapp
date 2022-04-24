@@ -20,4 +20,9 @@ export class PokeallService {
   showMore() : Observable<any> {
     return this.http.get(`${this.url}?limit=${this.more}&offset=${this.limit}`);
   }
+
+
+  searchPoke(value: string) : Observable<any> {
+    return this.http.get(`${this.url}/${value}`)
+  }
 }

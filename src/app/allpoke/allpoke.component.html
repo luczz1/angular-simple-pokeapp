@@ -1,5 +1,22 @@
 
 
+<div class="search" *ngIf="occult == false">
+
+  <div class="input-group">
+    <span class="text-muted"> Looking for a specific pokemon? </span>
+    <div class="form-outline">
+
+      <input type="search" id="form1" class="form-control" #searchPokemon/>
+      <label class="form-label" for="form1"></label>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="getPokemonBySearch(searchPokemon.value)">
+      <i class="fas fa-search">Search</i>
+    </button>
+
+  </div>
+</div>
+
 <body class="" *ngIf="occult == false">
 <div class="principal">
 
@@ -59,6 +76,10 @@
   <button class="voltar close" aria-label="Close" routerLink="/allpoke" (click)="occultElement()"><span aria-hidden="true">&times;</span></button>
 </div>
 
+<div class="notFound" *ngIf="allPokes.length <= 0">
+ <p>Nenhum pokémon encontrado.</p>
+ <p>Verifique se você digitou o nome correto.</p>
+</div>
 
 
 

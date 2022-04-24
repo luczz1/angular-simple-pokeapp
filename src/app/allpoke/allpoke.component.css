@@ -60,5 +60,19 @@
     margin: auto;
     width: 50%;
   }
+  .search {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+  }
 
+  .notFound {
+    text-align: center;
+  }
+
+}
+
+
+.notFound {
+  text-align: center;
 }
