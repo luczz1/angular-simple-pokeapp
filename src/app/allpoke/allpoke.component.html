@@ -6,8 +6,15 @@
     <span class="txts"> Looking for a specific pokemon? </span>
     <div class="form-outline">
 
-      <input type="search" id="form1" class="form-control" #searchPokemon/>
-      <label class="form-label" for="form1"></label>
+      <input type="search" id="form1" class="form-control" #searchPokemon [(ngModel)]="filterPoke" #findSuggestion autocomplete="off"/>
+      <div class="list" *ngIf="findSuggestion.value != ''">
+
+        <ul class="list-group" *ngFor="let poke of filteredPoke | slice:0:4">
+          <a routerLink="modal/{{poke}}" class="itenslista list-group-item list-group-item-action">{{poke | titlecase}}</a>
+        </ul>
+        <p class="text-muted">the suggestion only shows those pokemon that are available on this screen</p>
+      </div>
+      <p></p>
     </div>
 
     <button type="button" class="btn btn-primary" (click)="getPokemonBySearch(searchPokemon.value)">
@@ -17,8 +24,13 @@
   </div>
 </div>
 
-<body class="" *ngIf="occult == false">
-<div class="principal">
+<div>
+
+
+
+
+<body class="" >
+<div class="principal" *ngIf="occult == false">
 
   <div class="row justify-content-center">
 
@@ -43,12 +55,8 @@
 
 
       </div>
-      <div *ngIf="allPokes.length >= 150">
-      <a class="btn btn-primary" routerLink="modal/{{i+1}}" (click)="occultElement()">Details</a>
-    </div>
-
-    <div *ngIf="allPokes.length < 150">
-      <a class="btn btn-primary" routerLink="modal/{{pokeID}}" (click)="occultElement()">Details</a>
+      <div>
+      <a class="btn btn-primary" routerLink="modal/{{poke}}" (click)="occultElement()">Details</a>
     </div>
 
     </div>
@@ -81,8 +89,10 @@
  <p>Verifique se você digitou o nome correto.</p>
 </div>
 
-
-
-
-
 <router-outlet></router-outlet>
+
+
+
+
+
+

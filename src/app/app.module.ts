@@ -7,6 +7,7 @@ import { AllpokeComponent } from './allpoke/allpoke.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { ModalComponent } from './allpoke/modal/modal.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ModalComponent } from './allpoke/modal/modal.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   providers: [],

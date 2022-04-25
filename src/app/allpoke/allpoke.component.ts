@@ -8,10 +8,27 @@ import { PokeallService } from '../services/pokeall.service';
   styleUrls: ['./allpoke.component.css'],
 })
 export class AllpokeComponent implements OnInit {
-  allPokes: string[] = [];
+  _filterPoke: string;
+  allPokes: string[] = []
+  filteredPoke: string[] = []
   value = '';
   pokeID: number;
   occult: boolean = false
+
+  get filterPoke(): string {
+    return this._filterPoke;
+  }
+
+  set filterPoke(value: string) {
+    this._filterPoke = value
+    this.filteredPoke = this._filterPoke ? this.filterPokes(this.filterPoke) : this.allPokes
+  }
+
+  filterPokes(filterBy: string) : any {
+    filterBy = filterBy.toLowerCase()
+    return this.allPokes.filter(poke => poke.toString().toLowerCase().indexOf(filterBy) !== -1)
+
+  }
 
   constructor(
     public pokeAllService: PokeallService,

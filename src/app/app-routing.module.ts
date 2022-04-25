@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/pokepanel', pathMatch: 'full'},
   {path: 'pokepanel', component: PokePanelComponent},
   {path: 'allpoke', component: AllpokeComponent, children:[
-    {path: 'modal/:id', component: ModalComponent, pathMatch: 'full'}
+    {path: 'modal/:name', component: ModalComponent, pathMatch: 'full'}
   ]},
 
   {path: '**', component: AllpokeComponent},

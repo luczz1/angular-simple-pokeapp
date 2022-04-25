@@ -13,7 +13,7 @@ import { AllpokeComponent } from '../allpoke.component';
   providers: [AllpokeComponent],
 })
 export class ModalComponent implements OnInit {
-  pokeID: number;
+  name: string;
   pokeStats: PokeModel[];
   additionalPokeStats: additionalPoke[] = [];
   prefix: string[] = ['HP: ', 'ATK: ', 'DEF: ', 'Sp A: ', 'Sp D: ', 'Speed: '];
@@ -26,12 +26,12 @@ export class ModalComponent implements OnInit {
     private genericService: GenericService,
     public allPoke: AllpokeComponent
   ) {
-    this.route.params.subscribe((params) => (this.pokeID = params['id']));
+    this.route.params.subscribe((params) => (this.name = params['name']));
   }
 
   ngOnInit(): void {
     this.http
-      .get(`https://pokeapi.co/api/v2/pokemon/${this.pokeID}`)
+      .get(`https://pokeapi.co/api/v2/pokemon/${this.name}`)
       .subscribe((pokeInfosByName: any) => {
         this.pokeStats = [
           {

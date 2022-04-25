@@ -5,21 +5,21 @@
       <div class="row g-0">
         <div class="im col-md-4">
           <img *ngIf="form == 'oficial'"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokeID}}.png"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{values.pokedexNum}}.png"
               alt=""
               (click)="pokeClicked(values.name)"
               class="mi img-fluid rounded-start"
             />
 
           <img *ngIf="form == 'normal'"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{{pokeID}}.png"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{{values.pokedexNum}}.png"
               alt=""
               (click)="pokeClicked(values.name)"
               class="mimi img-fluid rounded-start"
             />
 
             <img *ngIf="form == 'shiny'"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/{{pokeID}}.png"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/{{values.pokedexNum}}.png"
             alt=""
             (click)="pokeClicked(values.name)"
             class="mimi img-fluid rounded-start"
@@ -72,4 +72,3 @@
 
 
 
-<router-outlet></router-outlet>
