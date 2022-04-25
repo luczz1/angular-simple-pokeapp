@@ -2,8 +2,8 @@
 
 <div class="search" *ngIf="occult == false">
 
-  <div class="input-group">
-    <span class="text-muted"> Looking for a specific pokemon? </span>
+  <div class="pesquisa">
+    <span class="txts"> Looking for a specific pokemon? </span>
     <div class="form-outline">
 
       <input type="search" id="form1" class="form-control" #searchPokemon/>
@@ -22,7 +22,7 @@
 
   <div class="row justify-content-center">
 
-    <div class="card mb-3" style="max-width: 18rem" *ngFor="let poke of allPokes; index as i">
+    <div class="card mb-3" *ngFor="let poke of allPokes; index as i">
       <div *ngIf="allPokes.length >= 150">
       <div class="card-header">{{i+1}}</div>
     </div>

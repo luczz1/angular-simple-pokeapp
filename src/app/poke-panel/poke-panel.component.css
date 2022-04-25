@@ -33,9 +33,16 @@
   cursor: pointer;
 }
 
+.card {
+  width: 28rem;
+}
+
 @media (max-width: 800px) {
   .imgtitle {
     width: 50%;
     cursor: pointer;
+  }
+  .card {
+    width: 13rem;
   }
 }

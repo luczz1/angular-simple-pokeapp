@@ -11,5 +11,7 @@
 @media only screen and (max-width: 800px) {
   .navbar {
     margin-bottom: 1px;
+    position: absolute;
+    display: none;
   }
 }
