@@ -10,7 +10,8 @@ Vou ir atualizando conforme eu for ficando mais experiente na linguagem.
 3. [**x**] - Ouvir o 'cry' do pokémon ao clicar nele.
 4. [**x**] - Melhorar o design
 5. [**x**] - Barra de pesquisa
-6. **[ ]** - Fazer o painel principal
+6. [**x**] - Pesquisa com sugestão atualizando conforme você escreve
+7. **[ ]** - Fazer o painel principal
 
 (os itens não serão feitos em ordem e alguns podem ficar inacabados para sempre)
 
