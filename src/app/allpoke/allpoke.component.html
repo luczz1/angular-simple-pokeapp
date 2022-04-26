@@ -3,29 +3,23 @@
 <div class="search" *ngIf="occult == false">
 
   <div class="pesquisa">
-    <span class="txts"> Looking for a specific pokemon? </span>
     <div class="form-outline">
 
-      <input type="search" id="form1" class="form-control" #searchPokemon [(ngModel)]="filterPoke" #findSuggestion autocomplete="off"/>
+      <input type="search" id="form1" class="form-control" #searchPokemon [(ngModel)]="filterPoke" #findSuggestion autocomplete="off" placeholder="Looking for a specific pokemon?"/>
       <div class="list" *ngIf="findSuggestion.value != ''">
 
         <ul class="list-group" *ngFor="let poke of filteredPoke | slice:0:4">
-          <a routerLink="modal/{{poke}}" class="itenslista list-group-item list-group-item-action">{{poke | titlecase}}</a>
+          <a routerLink="modal/{{poke}}" class="itenslista list-group-item list-group-item-action" (click)="occultElement()">{{poke | titlecase}}</a>
         </ul>
-        <p class="text-muted">the suggestion only shows those pokemon that are available on this screen</p>
       </div>
-      <p></p>
-    </div>
 
-    <button type="submit" class="btn btn-primary" (click)="getPokemonBySearch(searchPokemon.value)">
+    </div>
+    <button  type="submit" class="btn btn-primary mt-3" (click)="getPokemonBySearch(searchPokemon.value)">
       <i class="fas fa-search">Search</i>
     </button>
-
   </div>
 </div>
-
 <div>
-
 
 
 
@@ -45,13 +39,10 @@
 
       <div class="card-body">
         <h5 class="card-title">{{ poke | titlecase }}</h5>
-        <div *ngIf="allPokes.length >= 150">
+        <div>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i+1}}.png" alt="">
         </div>
 
-        <div *ngIf="allPokes.length < 150">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokeID}}.png" alt="">
-        </div>
 
 
       </div>
@@ -68,7 +59,7 @@
 
 <div >
   <hr class="my-4"/>
-  <div class="alert alert-danger"role="alert" *ngIf="this.pokeAllService.limit > 350">
+  <div class="alert alert-danger"role="alert" *ngIf="this.pokeAllService.limit > 350 && occult == false">
     Você chegou ao limite de pokémon permitidos!
   </div>
   <div *ngIf="allPokes.length > 150 && this.pokeAllService.limit < 350">

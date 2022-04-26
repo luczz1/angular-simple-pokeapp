@@ -4,13 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { GenericService } from 'src/app/services/generic-services.service';
 import { additionalPoke } from 'src/app/shared/additionalpoke.model';
 import { PokeModel } from 'src/app/shared/poke.model';
-import { AllpokeComponent } from '../allpoke.component';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
-  providers: [AllpokeComponent],
 })
 export class ModalComponent implements OnInit {
   name: string;
@@ -24,7 +22,6 @@ export class ModalComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     private genericService: GenericService,
-    public allPoke: AllpokeComponent
   ) {
     this.route.params.subscribe((params) => (this.name = params['name']));
   }
@@ -35,7 +32,7 @@ export class ModalComponent implements OnInit {
       .subscribe((pokeInfosByName: any) => {
         this.pokeStats = [
           {
-            pokedexNum: pokeInfosByName.game_indices[4].game_index,
+            pokedexNum: pokeInfosByName.id,
             name: pokeInfosByName.name,
             types: [],
             basestats: [],

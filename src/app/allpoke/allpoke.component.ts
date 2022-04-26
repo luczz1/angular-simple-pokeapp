@@ -72,6 +72,7 @@ export class AllpokeComponent implements OnInit {
   }
 
   occultElement() {
+    this.filterPoke = ''
     if (this.occult == false){
       this.occult = true
     } else {
