@@ -39,8 +39,12 @@
 
       <div class="card-body">
         <h5 class="card-title">{{ poke | titlecase }}</h5>
-        <div>
+        <div *ngIf="allPokes.length > 150">
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i+1}}.png" alt="">
+        </div>
+
+        <div *ngIf="allPokes.length < 150">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokeID}}.png" alt="">
         </div>
 
 
@@ -62,7 +66,7 @@
   <div class="alert alert-danger"role="alert" *ngIf="this.pokeAllService.limit > 350 && occult == false">
     Você chegou ao limite de pokémon permitidos!
   </div>
-  <div *ngIf="allPokes.length > 150 && this.pokeAllService.limit < 350">
+  <div *ngIf="occult == false && allPokes.length > 1">
     <div class="btnShow">
       <button class="btn btn-primary" (click)="showMoreFunction()">View more</button>
     </div>
