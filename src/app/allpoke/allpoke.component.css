@@ -46,11 +46,16 @@
 
 .principal {
   background-color: #fff;
-  margin-top: 290px;
+  margin-top: 90px;
 }
 
 .notFound {
   text-align: center;
+}
+
+
+.itenslista {
+  background-color: #f3f1f1;
 }
 
 

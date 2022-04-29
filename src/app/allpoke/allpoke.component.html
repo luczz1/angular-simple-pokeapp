@@ -8,8 +8,12 @@
       <input type="search" id="form1" class="form-control" #searchPokemon [(ngModel)]="filterPoke" #findSuggestion autocomplete="off" placeholder="Looking for a specific pokemon?"/>
       <div class="list" *ngIf="findSuggestion.value != ''">
 
-        <ul class="list-group" *ngFor="let poke of filteredPoke | slice:0:4">
-          <a routerLink="modal/{{poke}}" class="itenslista list-group-item list-group-item-action" (click)="occultElement()">{{poke | titlecase}}</a>
+        <ul class="list-group" style="position: absolute; z-index: 999;" >
+          <li class="list-group-item" style="background-color: #f3f1f1;"
+          *ngFor="let poke of filteredPoke | slice:0:4">
+          <a routerLink="modal/{{poke}}" class="itenslista list-group-item list-group-item-action" style="border: none;" (click)="occultElement()">{{poke | titlecase}}</a>
+          </li>
+          <!-- é possível encadear pipes -->
         </ul>
       </div>
 
