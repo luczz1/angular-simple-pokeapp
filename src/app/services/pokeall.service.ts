@@ -25,4 +25,8 @@ export class PokeallService {
   searchPoke(value: string) : Observable<any> {
     return this.http.get(`${this.url}/${value}`)
   }
+
+  globalPokes() : Observable<any> {
+    return this.http.get(`${this.url}?limit=898&offset=0`)
+  }
 }

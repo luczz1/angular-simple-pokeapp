@@ -14,6 +14,7 @@ export class AllpokeComponent implements OnInit {
   value = '';
   pokeID: number;
   occult: boolean = false
+  globalPokes: string[] = []
 
   get filterPoke(): string {
     return this._filterPoke;
@@ -21,12 +22,12 @@ export class AllpokeComponent implements OnInit {
 
   set filterPoke(value: string) {
     this._filterPoke = value
-    this.filteredPoke = this._filterPoke ? this.filterPokes(this.filterPoke) : this.allPokes
+    this.filteredPoke = this._filterPoke ? this.filterPokes(this.filterPoke) : this.globalPokes
   }
 
   filterPokes(filterBy: string) : any {
     filterBy = filterBy.toLowerCase()
-    return this.allPokes.filter(poke => poke.toString().toLowerCase().indexOf(filterBy) !== -1)
+    return this.globalPokes.filter(poke => poke.toString().toLowerCase().indexOf(filterBy) !== -1)
 
   }
 
@@ -36,6 +37,11 @@ export class AllpokeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.pokeAllService.globalPokes().subscribe((globalPokes) => {
+      globalPokes.results.forEach((globalPokes: any) => {
+        this.globalPokes.push(globalPokes.name)
+      });
+    })
     this.genericServices.getAllPokes();
     this.allPokes = this.genericServices.allPokes;
   }
