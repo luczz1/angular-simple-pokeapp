@@ -9,7 +9,7 @@ Vou ir atualizando conforme eu for ficando mais experiente na linguagem.
 2. [**x**] - Adicionar um botão de "Ver mais"
 3. [**x**] - Ouvir o 'cry' do pokémon ao clicar nele.
 4. [**x**] - Melhorar o design
-5. [**x**] - Barra de pesquisa
+5. [**x**] - Barra de pesquisa atualizando com sugestões conforme você digita
 6. **[ ]** - Fazer o painel principal
 
 (os itens não serão feitos em ordem e alguns podem ficar inacabados para sempre)
