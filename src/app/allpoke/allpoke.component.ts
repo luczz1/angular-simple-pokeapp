@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericService } from '../services/generic-services.service';
 import { PokeallService } from '../services/pokeall.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-allpoke',
@@ -34,9 +35,11 @@ export class AllpokeComponent implements OnInit {
   constructor(
     public pokeAllService: PokeallService,
     private genericServices: GenericService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.router.navigate(['/allpoke'])
     this.pokeAllService.globalPokes().subscribe((globalPokes) => {
       globalPokes.results.forEach((globalPokes: any) => {
         this.globalPokes.push(globalPokes.name)
